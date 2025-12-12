@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../FrontendMvc/FrontendMvc.csproj" />
+  <Project Path="BackendApi.csproj" />
+</Solution>
