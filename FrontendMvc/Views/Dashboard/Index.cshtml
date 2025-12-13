@@ -1,0 +1,50 @@
+﻿@model List<FrontendMvc.Models.EmployeeViewModel>
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="mt-4">
+
+    <div class="d-flex justify-content-between mb-3">
+        <h3>Employee Dashboard</h3>
+        <a href="/Dashboard/Add" class="btn btn-success">Add Employee</a>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>Department</th>
+                <th style="width:200px;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td>@emp.EmployeeId</td>
+                    <td>@emp.EmployeeName</td>
+                    <td>@emp.Email</td>
+                    <td>@emp.Salary</td>
+                    <td>@emp.DepartmentName</td>
+                    <td>
+                        <a href="/Dashboard/Details/@emp.EmployeeId" class="btn btn-sm btn-info">Details</a>
+                        <a href="/Dashboard/Edit/@emp.EmployeeId" class="btn btn-sm btn-warning">Edit</a>
+
+                        <form method="post"
+                              action="/Dashboard/Delete/@emp.EmployeeId"
+                              style="display:inline;"
+                              onsubmit="return confirm('Are you sure you want to delete?');">
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

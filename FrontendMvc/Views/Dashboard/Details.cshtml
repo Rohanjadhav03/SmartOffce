@@ -1,0 +1,25 @@
+﻿@model FrontendMvc.Models.EmployeeViewModel
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header">
+                <h4>Employee Details</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <tr><th>Id</th><td>@Model.EmployeeId</td></tr>
+                    <tr><th>Name</th><td>@Model.EmployeeName</td></tr>
+                    <tr><th>Email</th><td>@Model.Email</td></tr>
+                    <tr><th>Salary</th><td>@Model.Salary</td></tr>
+                    <tr><th>Department</th><td>@Model.DepartmentName</td></tr>
+                </table>
+
+                <a href="/Dashboard/Index" class="btn btn-secondary">Back</a>
+            </div>
+        </div>
+    </div>
+</div>

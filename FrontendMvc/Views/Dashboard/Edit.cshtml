@@ -1,0 +1,56 @@
+﻿@model FrontendMvc.Models.EmployeeViewModel
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header">
+                <h4>Edit Employee</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+
+                    <input type="hidden" asp-for="EmployeeId" />
+
+                    <div class="mb-3">
+                        <label class="form-label">Employee Name</label>
+                        <input asp-for="EmployeeName" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Salary</label>
+                        <input asp-for="Salary" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Department Name</label>
+                        <input asp-for="DepartmentName" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Department Id</label>
+                        <input asp-for="DepartmentId" class="form-control" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a href="/Dashboard/Index" class="btn btn-secondary">Cancel</a>
+
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger mt-3">
+                            @ViewBag.Error
+                        </div>
+                    }
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

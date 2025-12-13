@@ -4,6 +4,12 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>WinExe</OutputType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\bootstrap\css\" />
+    <Folder Include="wwwroot\lib\bootstrap\js\" />
+  </ItemGroup>
 
 </Project>

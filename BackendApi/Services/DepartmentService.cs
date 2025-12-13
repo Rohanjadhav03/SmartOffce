@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace BackendApi.Services
 {
-    public class DepartmentService : IDepartmentRepository
+    public class DepartmentService : IDepartmentService
     {
         private readonly IDepartmentRepository _Repository;
         public DepartmentService(IDepartmentRepository Repository)

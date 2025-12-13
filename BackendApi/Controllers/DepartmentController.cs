@@ -73,7 +73,7 @@ namespace BackendApi.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("update")]
         public async Task<IActionResult> UpdateDepartments([FromBody] Department Dep)
         {

@@ -14,10 +14,10 @@ namespace BackendApi.Repositories
         }
         public async Task<bool> AddEmployeeAsync(Employee employee)
         {
-            string Query = @"INSERT INTO Employee (EmplotyeeName, Email, Salary, DepartmentId) VALUES(@EmplotyeeName, @Email, @Salary, @DepartmentId)";
+            string Query = @"INSERT INTO Employee (EmployeeName, Email, Salary, DepartmentId) VALUES(@EmployeeName, @Email, @Salary, @DepartmentId)";
             SqlParameter[] param =
             {
-                new SqlParameter("@EmplotyeeName",employee.EmployeeName),
+                new SqlParameter("@EmployeeName",employee.EmployeeName),
                 new SqlParameter("@Email",employee.Email),
                 new SqlParameter("@Salary",employee.Salary),
                 new SqlParameter("@DepartmentId",employee.DepartmentId),
@@ -56,7 +56,7 @@ namespace BackendApi.Repositories
             List<Employee> employees = new List<Employee>();
             string Query = @"SELECT 
                                    e.EmployeeId,
-                                e.EmplotyeeName,
+                                e.EmployeeName,
                                 e.Email,
                                 e.Salary,
                                 e.DepartmentId,
@@ -93,7 +93,7 @@ namespace BackendApi.Repositories
             Employee employee = null;
             string Query = @"SELECT 
                                    e.EmployeeId,
-                                e.EmplotyeeName,
+                                e.EmployeeName,
                                 e.Email,
                                 e.Salary,
                                 e.DepartmentId,
@@ -128,11 +128,11 @@ namespace BackendApi.Repositories
 
         public async Task<bool> UpdateEmployeeAsync(Employee employee)
         {
-            string Query = @"UPDATE Employee SET EmplotyeeName=@EmplotyeeName, Email=@Email, Salary=@Salary, DepartmentId=@DepartmentId WHERE EmployeeId=@EmployeeId";
+            string Query = @"UPDATE Employee SET EmployeeName=@EmployeeName, Email=@Email, Salary=@Salary, DepartmentId=@DepartmentId WHERE EmployeeId=@EmployeeId";
             SqlParameter[] param =
             {
                 new SqlParameter("@EmployeeId", employee.EmployeeId),
-                new SqlParameter("@EmplotyeeName",employee.EmployeeName),
+                new SqlParameter("@EmployeeName",employee.EmployeeName),
                 new SqlParameter("@Email",employee.Email),
                 new SqlParameter("@Salary",employee.Salary),
                 new SqlParameter("@DepartmentId",employee.DepartmentId),
