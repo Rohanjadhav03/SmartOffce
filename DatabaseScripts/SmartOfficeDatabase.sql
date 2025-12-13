@@ -51,3 +51,25 @@ values('Rohan Jadhav','rohan@comapny.com',55000,2),
 	  ('Vishal Jadhav','Vishal@comapny.com',42000,2),
 	  ('Hitarth Saudankar','Hith@comapny.com',53000,4)
 	  Go
+
+
+	  USE SmartOfficeDB;
+GO
+
+CREATE TABLE Users
+(
+    UserId INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(100) NOT NULL UNIQUE,
+    Password NVARCHAR(200) NOT NULL,
+    Role NVARCHAR(50) NOT NULL,
+    IsActive BIT NOT NULL DEFAULT 1,
+    CreatedDate DATETIME NOT NULL DEFAULT GETDATE()
+);
+GO
+
+INSERT INTO Users (Username, Password, Role)
+VALUES 
+('admin', 'admin@123', 'Admin'),
+('manager', 'manager@123', 'Manager'),
+('user', 'user@123', 'User');
+GO
