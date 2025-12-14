@@ -44,7 +44,7 @@ values('Human Resources'),
 	  ('Operations')
 	  Go
 
-INSERT INTO Employee (EmplotyeeName,Email,Salary,DepartmentId)
+INSERT INTO Employee (EmployeeName,Email,Salary,DepartmentId)
 values('Rohan Jadhav','rohan@comapny.com',55000,2),
       ('Amit Singh','amit@comapny.com',45000,1),
 	  ('John Doe','John@comapny.com',48000,3),
@@ -73,3 +73,4 @@ VALUES
 ('manager', 'manager@123', 'Manager'),
 ('user', 'user@123', 'User');
 GO
+truncate table Employee
